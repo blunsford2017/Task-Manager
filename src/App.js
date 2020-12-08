@@ -12,14 +12,38 @@ import HomePage from './Pages/HomePage';
 import LoginPage from './Pages/LoginPage'; 
 import SignupPage from './Pages/SignupPage'; 
 
+// Import switch and route
+import { Route, Switch } from 'react-router-dom';
+import DashboardPage from './Pages/DashboardPage';
+
 function App() {
   return (
     <div className="App">
       <Header />
-      <DahsboardPage />
-      <HomePage />
-      <LoginPage />
-      <SignupPage />
+
+      {/* add the switch component
+      inside of switch component you need a route for each page */}
+      <Switch>
+        <Route exact path='/dashboard' render={ props => 
+          <DashboardPage />
+        }/>
+      </Switch>
+      <Switch>
+        <Route exact path='/' render={ props => 
+          <HomePage />
+        }/>
+      </Switch>
+      <Switch>
+        <Route exact path='/login' render={ props => 
+          <LoginPage />
+        }/>
+      </Switch>
+      <Switch>
+        <Route exact path='signup' render={ props => 
+          <SignupPage />
+        }/>
+      </Switch>
+
       <Footer />
     </div>
   );
