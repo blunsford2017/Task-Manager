@@ -27,18 +27,15 @@ function App() {
         <Route exact path='/dashboard' render={ props => 
           <DashboardPage />
         }/>
-      </Switch>
-      <Switch>
+
         <Route exact path='/' render={ props => 
           <HomePage />
         }/>
-      </Switch>
-      <Switch>
+
         <Route exact path='/login' render={ props => 
           <LoginPage />
         }/>
-      </Switch>
-      <Switch>
+
         <Route exact path='signup' render={ props => 
           <SignupPage />
         }/>
