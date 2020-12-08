@@ -1,7 +1,13 @@
+import './Footer.css';
+
 function Footer (props) {
     return(
-        <footer>
-             Footer
+        <footer className="Footer">
+            <p>
+                Copyright &copy; 
+                My Project {new Date().getFullYear()} 
+                All Rights Reserved
+            </p>
         </footer>
     )
 
