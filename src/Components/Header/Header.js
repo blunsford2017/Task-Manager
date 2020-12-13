@@ -6,7 +6,7 @@ function Header (props) {
     return(
         <header className="Header">
             <Link to='/'> 
-                <h1>My Project</h1>
+                <h1>Task Manager</h1>
             </Link>
             <nav>
                 <ul className="NavLinks">

@@ -22,6 +22,8 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px 10px 10px 10px;
+  background-color: beige;
 }
 .Page > h1 {
   margin-bottom: 50px;

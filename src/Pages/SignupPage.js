@@ -15,11 +15,21 @@ export default function SignupPage(props) {
     }
 
     function handleChange(event) {
+        setFormState(prevState => ({
+            ...prevState,
+            [event.target.name]: event.target.value
+        }));
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         if(!formValid()) return;
+        try {
+            await signup(formState);
+            // calling a helper function defined in App.js to add the user to state
+        } catch (error) {
+            alert(error.message);
+        }
     }
 
     return (
@@ -52,9 +62,3 @@ export default function SignupPage(props) {
         </main>
     );
 };
-
-
-
-
-
-
