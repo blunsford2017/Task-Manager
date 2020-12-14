@@ -19,7 +19,7 @@ class DashboardPage extends React.Component {
          <h1>Your Dashboard</h1>
          <div>
              <AddTask addTaskFn={this.addTask} />
-             <TaskList tasks={this.state.tasks} />
+             <TaskList updateTaskFn={this.updateTask} tasks={this.state.tasks} />
          </div>
       </main>
      );

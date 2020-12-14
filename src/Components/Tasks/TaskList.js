@@ -9,9 +9,9 @@ class TaskList extends React.Component {
         return(
             <div className="taskList">
                 {
-                    tasks.map((_task, _index) => {
+                    tasks.map((_task) => {
                         return(
-                            <Task key={_index} task={_task} />
+                            <Task task={_task} />
                         )
                     })
                 }
