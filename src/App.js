@@ -15,7 +15,7 @@ import SignupPage from './Pages/SignupPage';
 // Import switch and route
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 
-import { getUser, logout } from './services/userService';
+import { getUser, logout } from './Services/userService';
 
 function App(props) {
   /* component state */

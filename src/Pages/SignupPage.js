@@ -1,4 +1,4 @@
-import { signup } from '../services/userService';
+import { signup } from '../Services/userService';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
