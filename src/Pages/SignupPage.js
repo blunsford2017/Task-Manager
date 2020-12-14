@@ -1,4 +1,4 @@
-import { signup } from '../Services/userService';
+import { signup } from '../services/userService';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -26,7 +26,7 @@ export default function SignupPage(props) {
         if(!formValid()) return;
         try {
             await signup(formState);
-            // calling a helper function defined in App.js to add the user to state
+            props.handleSignupOrLogin();
         } catch (error) {
             alert(error.message);
         }

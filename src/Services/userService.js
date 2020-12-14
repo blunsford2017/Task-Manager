@@ -1,6 +1,8 @@
-import { setToken } from "./tokenServices";
+import { setToken, getUserFromToken, removeToken } from './tokenService';
 
 const BASE_URL = 'http://localhost:3001/api/users';
+
+
 
 function signup(user) {
     return fetch(BASE_URL + '/signup', {
@@ -15,11 +17,7 @@ function signup(user) {
     }).then(({ token }) => setToken(token));
 }
 
-function getUser() {
-
-}
-
-function login (credentials) {
+function login(credentials) {
     return fetch(BASE_URL + '/login', {
         method: 'POST',
         headers: {
@@ -28,17 +26,22 @@ function login (credentials) {
         body: JSON.stringify(credentials)
     }).then(response => {
         if(response.ok) return response.json();
-        throw new Error('Bad Creditals');
+        throw new Error('Bad Credentials');
     }).then(({ token }) => setToken(token));
 }
 
-function logout () {
-
+function logout() {
+    removeToken();
 }
+
+function getUser() {
+    return getUserFromToken();
+}
+
 
 export {
     signup,
-    getUser,
     login,
     logout,
-}   
+    getUser
+}
