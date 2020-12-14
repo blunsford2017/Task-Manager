@@ -12,9 +12,9 @@ class AddTask extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="AddTask">
                 <form onSubmit={(event) => this.submitTask(event)}>
-                    <input onChange={(event) => this.updateInput(event)} type="text" placeholder="Add Task" />
+                    <input id='addTaskInput' onChange={(event) => this.updateInput(event)} type="text" placeholder="Add Task" />
                     <button type='submit'>Add Task</button>
                 </form>
             </div>
@@ -27,7 +27,8 @@ class AddTask extends React.Component{
 
     submitTask = (event) => {
         event.preventDefault();
-        console.log('submit', this.state);
+        this.props.addTaskFn(this.state.task);
+        document.getElementById('addTaskInput').value='';
     }
 }
 
