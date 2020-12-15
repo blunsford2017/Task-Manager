@@ -32,7 +32,7 @@ Welcome to Task Manager! This is your personal wasy to brain dump all of those t
 ![Dashboard](./Pics/Dashboard.png)
 
 # Unsolved Problems
-- 
+- error "Expected an assignment or function call and instead saw an expression"
 
 # Future Enhancements:
 - seperate lists

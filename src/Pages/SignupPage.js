@@ -38,7 +38,12 @@ export default function SignupPage(props) {
             <form onSubmit={handleSubmit}>
             <div className="form-group">
             <div className="col-sm-12">
-              <input name="name" type="text" className="form-control" placeholder="Name" value={formState.name} onChange={handleChange} />
+              <input
+               name="name" type="text" 
+               className="form-control" p
+               laceholder="Name" 
+               value={formState.name} 
+               onChange={handleChange} />
             </div>
           </div>
           <div className="form-group">

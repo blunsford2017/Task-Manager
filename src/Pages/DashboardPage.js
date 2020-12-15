@@ -1,48 +1,65 @@
-import React from 'react';
-import ReactDom from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import AddTask from '../Components/Tasks/AddTask';
-import TaskList from '../Components/Tasks/TaskList'
+import { useState } from 'react';
+// import { Link } from 'react-router-dom';
+import InputForm from './Tasks/InputForm';
+import List from './Tasks/List';
 
 
-class DashboardPage extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            tasks: []
-        }
-    }
 
-    render() {
-     return(
-     <main className="Page">
-         <h1>Your Dashboard</h1>
-         <div>
-             <AddTask addTaskFn={this.addTask} />
-             <TaskList updateTaskFn={this.updateTask} tasks={this.state.tasks} />
-         </div>
-      </main>
-     );
-    }
+export default function DashboardPage(props) {
+  const [ taskState, setTaskState ] = useState({
+    list: [],
+    pendingItem: "",
+});
 
+    function handleChange(event) {
+      setTaskState(prevState => ({
+          ...prevState,
+          [event.target.pendingItem]: event.target.value
+      }));
+  }
 
-    componentDidMount = () => {
-        const tasks = localStorage.getItem('tasks');
-        if (tasks) {
-            const savedTasks = JSON.parse(tasks);
-            this.setState({ tasks: savedTasks });
-        } else {
-            console.log ('No tasks')
-        }
-    }
+  function newItemSubmitHandler(event) {
+    event.preventDefault();
+    setTaskState({
+      list: [
+        {
+          name: taskState.pendingItem,
+        },
+        ...taskState.list
+      ],
+      pendingItem: ""
+    });
+  }
 
-    addTask = async (task) => {
-        await this.setState({ tasks: [...this.state.tasks, {
-            text: task,
-            completed: false,
-        }]});
-        localStorage.setItem('tasks', JSON.stringify(this.state.tasks));
-    }
-}
+  function handleRemove(index) {
+    const newState = taskState.list.filter(item => {
+      taskState.list.indexOf(item) !== index
+    });
 
-export default DashboardPage;
+    setTaskState({ 
+      list: newState
+    });
+  }
+    
+    return (
+        <main className="Page">
+            <h1>Your Dashboard</h1>
+            <div>
+              <InputForm 
+                className="input"
+                type="text"
+                onChange={handleChange}
+                newItemSubmitHandler={newItemSubmitHandler}
+                value={taskState.pendingItem}
+                placeholder="Add Task"
+              />
+
+              <List 
+              list={taskState.list} 
+              handleRemove={handleRemove}
+              />
+
+            </div>
+        </main>
+    );
+};
