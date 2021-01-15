@@ -32,7 +32,7 @@ export default function DashboardPage(props) {
   }
 
   function handleRemove(index) {
-    const newState = taskState.list.filter(item => {
+    const newState = taskState.list.filter((item) => {
       taskState.list.indexOf(item) !== index
     });
 
