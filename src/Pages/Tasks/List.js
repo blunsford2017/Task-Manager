@@ -7,7 +7,8 @@ export default function List(props) {
           <ListItem
             key={index}
             item={item.name}
-            handleRemove={props.handleRemove}
+            handleDelete={props.handleDelete}
+            handleUpdate={props.handleUpdate}
           />
         ))}
       </ul>
