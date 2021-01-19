@@ -31,14 +31,34 @@ export default function DashboardPage(props) {
     });
   }
 
-  function handleRemove(index) {
-    const newState = taskState.list.filter((item) => {
-      taskState.list.indexOf(item) !== index
-    });
+  function handleUpdate(event, formInputs) {
+    event.preventDefault();
+    fetch(`/tasks/${formInputs.id}`, {
+      body: JSON.stringify(formInputs),
+      method: 'PUT',
+      headers: {
+     'Accept': 'application/json, text/plain, */*',
+     'Content-Type': 'application/json'
+   }
+  })
+   .then(() => {
+     gettasks();
+   })
+   .catch(error => console.log(error));
+  }
 
-    setTaskState({ 
-      list: newState
-    });
+  function handleDelete(deletedTaks) {
+    fetch(`/tasks/${deletedTask.id}`, {
+       method: 'DELETE',
+       headers: {
+         'Accept': 'application/json, text/plain, */*',
+         'Content-Type': 'application/json'
+       }
+     })
+   .then(() => {
+    gettasks();
+   })
+   .catch(error => console.log(error));
   }
     
     return (
@@ -56,7 +76,8 @@ export default function DashboardPage(props) {
 
               <List 
               list={taskState.list} 
-              handleRemove={handleRemove}
+              handleDelete={handleDelete}
+              handleUpdate={handleUpdate}
               />
 
             </div>
