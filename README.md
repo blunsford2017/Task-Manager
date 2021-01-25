@@ -1,6 +1,6 @@
 # Task Manager
 
-Welcome to Task Manager! This is your personal wasy to brain dump all of those task on random sticky notes, planers, crumbled up napkins, multiple taks apps, calanders,and more! Just login or signup to get started!
+Welcome to Task Manager! This is your personal way to brain dump all of those task on random sticky notes, planers, crumbled up napkins, multiple task apps, calendars,and more! Just login or signup to get started!
 
 ## Screen Shots:
 ![Homepage](./Pics/FinHomePage.png)
@@ -17,6 +17,8 @@ Welcome to Task Manager! This is your personal wasy to brain dump all of those t
 - Node
 - Mongoose
 - React
+- Trello
+- Heroku
 
 # Getting started
 -  Trello project planning board:
