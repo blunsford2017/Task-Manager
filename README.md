@@ -2,6 +2,9 @@
 
 Welcome to Task Manager! This is your personal way to brain dump all of those task on random sticky notes, planers, crumbled up napkins, multiple task apps, calendars,and more! Just login or signup to get started!
 
+- Heroku Live Website: 
+[Click Here](https://task-manager13.herokuapp.com)
+
 ## Screen Shots:
 ![Homepage](./Pics/FinHomePage.png)
 ![Login](./Pics/FinLogin.png)
@@ -23,9 +26,6 @@ Welcome to Task Manager! This is your personal way to brain dump all of those ta
 # Getting started
 -  Trello project planning board:
 [Click Here](https://trello.com/b/g570SDzx/project-3)
-
-- Heroku website: 
-[Click Here](https://task-manager13.herokuapp.com)
 
 - Inital Wireframes:
 ![HomePage](./Pics/Homepage.png)
