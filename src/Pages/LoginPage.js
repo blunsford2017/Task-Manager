@@ -35,7 +35,7 @@ export default function LoginPage(props) {
 
     return (
         <main className="Page">
-            <h1>LoginPage</h1>
+            <h1>Login Page</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <div className="col-sm-12">
